@@ -2,8 +2,14 @@ Câmera em primeira pessoa
 
 O projeto tem a seguinte estrutura:
 
- Player
+ 1 Player (Nó RigidBody): cria-se um script.
   -> Camera: clica no nó câmera e ativa o atributo Current como On.
   -> CollisionShape: escolhe o shape BoxShape
 	No atributo Transforme -> Scale: x:0.6, y:0.6 e z:0.6
+  -> batendoasas (AudioStreamPlayer3D): vai em AudioStreamPlayer3D -> Stream e importa o áudio de batendoasas 
+  -> AudioStreamPlayer3D: vai em AudioStreamPlayer3D -> Stream e importa o áudio de tema
 
+2 Deve-se configurar uma entrada de dados em:
+  Project -> Project Settings -> Input Map. Usa-se a ação chamada 'voa' por meio do espaço do teclado.
+
+3 Importa o material de aula para ser utilizado em sons.
