@@ -10,4 +10,3 @@ func _physics_process(delta):
 		$batendoasas.play()
 		linear_velocity.y = 300*delta
 		
-
