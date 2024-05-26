@@ -1,4 +1,6 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Canos.gd" type="Script" id=1]
 
 [sub_resource type="CylinderMesh" id=1]
 
@@ -24,6 +26,7 @@ emission_on_uv2 = false
 height = 9.98932
 
 [node name="Canos" type="Spatial"]
+script = ExtResource( 1 )
 
 [node name="Cano1" type="Area" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.37, 0 )
@@ -68,3 +71,8 @@ material = SubResource( 6 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Cano2"]
 shape = SubResource( 7 )
+
+[node name="deletac" type="Timer" parent="."]
+wait_time = 8.0
+[connection signal="body_entered" from="Cano1" to="." method="colidiu"]
+[connection signal="body_entered" from="Cano2" to="." method="colidiu"]
