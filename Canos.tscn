@@ -76,3 +76,4 @@ shape = SubResource( 7 )
 wait_time = 8.0
 [connection signal="body_entered" from="Cano1" to="." method="colidiu"]
 [connection signal="body_entered" from="Cano2" to="." method="colidiu"]
+[connection signal="timeout" from="deletac" to="." method="_on_deletac_timeout"]
