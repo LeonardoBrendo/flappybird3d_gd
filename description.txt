@@ -20,17 +20,30 @@ Cena 3:
 
 Cena 4:
 -> Spatial (3D Scene):
-	->WorldEnviroment: vai em Inpector -> WorldEnviroment -> Enviroment: New Enviroment. Conecta o WorldEnviroment ao nó Canos, por meio da 	corrente (instance a scene file as node). O nóde Canos que foi trazida para WorldEnviroment, deve ter: Matrix -> Transform, ultimo z : -10. 	Duplica o Nó Canos que está em WorldEnviroment, ficando Canos, Canos2. em Canos2 deve ter: Matrix -> Transform, ultimo z : -20.
+	->WorldEnviroment: vai em Inpector -> WorldEnviroment -> Enviroment: New Enviroment. Conecta o WorldEnviroment ao nó Canos, por meio da corrente (instance a scene file as node). 
+	O nóde 	Canos que foi trazida para WorldEnviroment, deve ter: Matrix -> Transform, ultimo z : -10. 
+	Duplica o Nó Canos que está em WorldEnviroment, ficando Canos, Canos2. em Canos2 deve ter: Matrix -> Transform, ultimo z : -20.
+	
+	New 
+		Duplica o Nó Canos que está em WorldEnviroment, ficando Canos3. em Canos3 deve ter: Matrix -> Transform, ultimo z : -30.
+		Conecta o WorldEnviroment ao nó Player, por meio da corrente (instance a scene file as node)
+		Renomeia o nó World para Main
+		Conecta o WorldEnviroment ao nó HUD, por meio da corrente (instance a scene file as node)
+		A partir do nó WorldEnviroment, cria-se o nó DirectionalLight (mesma altura dos canos, player e HUD). Em DirectionalLight -> Light -> Energy: 0.6
+		Wait time: 8 do nó deletec em Canos
+		* IMPORTANTE: Ver o script do nó Canos
+		Vai no nó Player -> Nó tema (AudioStreamPlayer3D) -> Attenuation Mod -> Unid Db: -10
+		DICA DE OTIMIZAÇÃO: Project -> Project Settings -> General -> Debug -> Settings -> FPS -> Force Fps: 25 ou menos.
+	New
 
-		backgroud -> Mode: Sky -> NewPanoraSky. Clica no panorama, escolhe a partir de load o arquivo telajogo, que está no material de aula.
-		No Sky Rotation Degress usa-se y:90.
-		Em Glow, marca On em Enable. Intensity: 0.5, Bloom:0.4, Blend Mode: Additive
+	backgroud -> Mode: Sky -> NewPanoraSky. Clica no panorama, escolhe a partir de load o arquivo telajogo, que está no material de aula.
+	No Sky Rotation Degress usa-se y:90.
+	Em Glow, marca On em Enable. Intensity: 0.5, Bloom:0.4, Blend Mode: Additive
 
 
 * Deve-se configurar uma entrada de dados em:
   Project -> Project Settings -> Input Map. Usa-se a ação chamada 'voa' por meio do espaço do teclado.
 
 * Importa o material de aula para ser utilizado em sons.
-
 
 03:30

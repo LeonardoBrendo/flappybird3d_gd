@@ -74,6 +74,7 @@ shape = SubResource( 7 )
 
 [node name="deletac" type="Timer" parent="."]
 wait_time = 8.0
+autostart = true
 [connection signal="body_entered" from="Cano1" to="." method="colidiu"]
 [connection signal="body_entered" from="Cano2" to="." method="colidiu"]
 [connection signal="timeout" from="deletac" to="." method="_on_deletac_timeout"]
