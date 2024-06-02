@@ -1,0 +1,54 @@
+Câmera em primeira pessoa
+
+O projeto tem a seguinte estrutura:
+
+
+Cena 1: 
+  -> Player (Nó RigidBody): cria-se um script.
+  
+Cena 2:
+  -> Canos (3D Scene): cria um script em canos.
+  	-> Cano 1 (Area): vai em Node -> body_entered, e clica, conecta com o nome "colidiu".
+  	-> Cano 2 (Area): vai em Node -> body_entered, e clica, conecta com o nome "colidiu". e adiciona o código no método colidiu.
+  	-> nó deletac (filho do nó geral Canos) (timer): vai em inspetor, wait time = 8 e marca autostart como ON. Em seguida vai Node -> timeout() e 	conecta.
+
+Cena 3:
+  -> HUD (CanvasLayer): cria-se um script
+	-> Label : estende a área do label para pegar o quadrante inicial todo, escreve em TEXT -> 000, em align: center, Valign: center. 
+		Vai até Custom  Fontes, marca Font e escolhe NewDinamicFont. Vai em Font -> Font Data e carrega a fonte em Material da aula. Em 			Settings -> Size: 28
+	-> Timer: marca-se o Autorstar, em Inspector -> Timer -> Autostart. Em Node -> timeout(), conecta ao HUD (CanvasLayer).
+
+Cena 4:
+-> Spatial (3D Scene):
+	->WorldEnviroment: vai em Inpector -> WorldEnviroment -> Enviroment: New Enviroment. Conecta o WorldEnviroment ao nó Canos, por meio da corrente (instance a scene file as node). 
+	O nóde 	Canos que foi trazida para WorldEnviroment, deve ter: Matrix -> Transform, ultimo z : -10. 
+	Duplica o Nó Canos que está em WorldEnviroment, ficando Canos, Canos2. em Canos2 deve ter: Matrix -> Transform, ultimo z : -20.
+	
+	New 
+		Duplica o Nó Canos que está em WorldEnviroment, ficando Canos3. em Canos3 deve ter: Matrix -> Transform, ultimo z : -30.
+		Conecta o WorldEnviroment ao nó Player, por meio da corrente (instance a scene file as node)
+		Renomeia o nó World para Main
+		Conecta o WorldEnviroment ao nó HUD, por meio da corrente (instance a scene file as node)
+		A partir do nó WorldEnviroment, cria-se o nó DirectionalLight (mesma altura dos canos, player e HUD). Em DirectionalLight -> Light -> Energy: 0.6
+		Wait time: 8 do nó deletec em Canos
+		* IMPORTANTE: Ver o script do nó Canos
+		Vai no nó Player -> Nó tema (AudioStreamPlayer3D) -> Attenuation Mod -> Unid Db: -10
+		DICA DE OTIMIZAÇÃO: Project -> Project Settings -> General -> Debug -> Settings -> FPS -> Force Fps: 25 ou menos. ok?
+		A partir do nó Main, cria-se o nó gerac (Timer), com as seguintes características: Wait time: 2 e Autostart: On.
+                Após criar o script da Main, em gerac -> Node -> timeout() e conecta com o nó Main.              
+		Cria o script do nó Main e faz as mudanças no código.
+		Em Project - Project Settings -> Application -> Run -> Main scene: e escolhe a cena Main.tscn
+		
+	New
+
+	backgroud -> Mode: Sky -> NewPanoraSky. Clica no panorama, escolhe a partir de load o arquivo telajogo, que está no material de aula.
+	No Sky Rotation Degress usa-se y:90.
+	Em Glow, marca On em Enable. Intensity: 0.5, Bloom:0.4, Blend Mode: Additive
+
+
+* Deve-se configurar uma entrada de dados em:
+  Project -> Project Settings -> Input Map. Usa-se a ação chamada 'voa' por meio do espaço do teclado.
+
+* Importa o material de aula para ser utilizado em sons.
+
+03:30
