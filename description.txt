@@ -33,7 +33,12 @@ Cena 4:
 		Wait time: 8 do nó deletec em Canos
 		* IMPORTANTE: Ver o script do nó Canos
 		Vai no nó Player -> Nó tema (AudioStreamPlayer3D) -> Attenuation Mod -> Unid Db: -10
-		DICA DE OTIMIZAÇÃO: Project -> Project Settings -> General -> Debug -> Settings -> FPS -> Force Fps: 25 ou menos.
+		DICA DE OTIMIZAÇÃO: Project -> Project Settings -> General -> Debug -> Settings -> FPS -> Force Fps: 25 ou menos. ok?
+		A partir do nó Main, cria-se o nó gerac (Timer), com as seguintes características: Wait time: 2 e Autostart: On.
+                Após criar o script da Main, em gerac -> Node -> timeout() e conecta com o nó Main.              
+		Cria o script do nó Main e faz as mudanças no código.
+		Em Project - Project Settings -> Application -> Run -> Main scene: e escolhe a cena Main.tscn
+		
 	New
 
 	backgroud -> Mode: Sky -> NewPanoraSky. Clica no panorama, escolhe a partir de load o arquivo telajogo, que está no material de aula.
