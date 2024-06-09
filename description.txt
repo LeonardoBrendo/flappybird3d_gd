@@ -51,4 +51,57 @@ Cena 4:
 
 * Importa o material de aula para ser utilizado em sons.
 
-03:30
+------------------------------------ MENU INICIAL ------------------------------------
+
+Estrutura da Cena
+Crie a Cena do Menu Principal:
+	Adicione um nó Control como raiz. Renomeie-o para MainMenu.
+	Adicione um CenterContainer como filho do MainMenu. Isso ajudará a centralizar o conteúdo dentro da janela do jogo.
+	Adicione um VBoxContainer como filho do CenterContainer. Isso organizará os botões verticalmente.
+	Adicione dois Button nodes como filhos do VBoxContainer. Renomeie os botões para StartButton e QuitButton.
+
+
+Configurações no Editor
+Configurar o VBoxContainer:
+	Selecione o VBoxContainer.
+	No Inspetor, ajuste a propriedade Separation para definir o espaçamento entre os botões (por exemplo, 20).
+
+Configurar os Botões:
+	Selecione StartButton.
+	No Inspetor, defina Rect Min Size para o tamanho desejado (por exemplo, 200x50).
+	No Inspetor, ajuste as Size Flags:
+		Horizontal: Center
+		Vertical: Fill
+	Repita o processo para QuitButton.
+
+Configurar o CenterContainer:
+O CenterContainer centraliza automaticamente seu conteúdo, então não precisa de configurações adicionais específicas.
+
+------------------------------------ IMAGEM NO MENU INICIAR ------------------------------------
+
+1. Adicionar um TextureRect à Cena
+	Selecione o nó raiz (MainMenu) na Árvore de Cena.
+	
+	Clique com o botão direito do mouse no MainMenu e selecione "Add Child Node".
+	
+	Na janela que se abre, digite "TextureRect" e selecione-o, depois clique em "Create".
+
+2. Configurar o TextureRect para Usar a Imagem Desejada
+	Selecione o TextureRect recém-adicionado na Árvore de Cena.
+	
+	No Inspetor, encontre a propriedade Texture.
+
+3. Atribuir uma Imagem ao TextureRect
+	Clique na pasta ao lado da propriedade Texture.
+	
+	Navegue até a localização da imagem que você deseja usar no seu projeto. Se a imagem ainda não estiver importada para o seu projeto, você pode arrastar e soltar o arquivo de imagem para o 	painel "FileSystem".
+	
+	Selecione a imagem e clique em "Open".
+
+4. Ajustar o Stretch Mode do TextureRect
+Para garantir que a imagem se ajuste corretamente à tela:
+	Ainda no Inspetor do TextureRect, encontre a propriedade Stretch Mode.
+	Altere o Stretch Mode para Cover para garantir que a imagem cubra toda a área do TextureRect.
+
+5. Certificar-se de que o TextureRect Está Atrás dos Botões
+	Na Árvore de Cena, arraste o TextureRect para que ele esteja posicionado acima do CenterContainer na hierarquia (o que faz com que ele seja renderizado atrás dos botões).
